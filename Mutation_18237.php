@@ -335,14 +335,15 @@ class Mutation
                 $indexOfGen = Randomizer::getRandomIndexOfGen();
                 $selectedIndividu = $this->population[$indexOfIndividu];
                 
-                echo 'Before mutation: ';
+                echo '<br>Before mutation: ';
                 print_r($selectedIndividu);
                 echo '<br>';
                 $valueOfGen = $selectedIndividu[$indexOfGen];
                 $mutatedGen = $this->generateMutation($valueOfGen);
                 $selectedIndividu[$indexOfGen] = $mutatedGen;
-                echo 'After mutation: ';
+                echo '<br>After mutation: ';
                 print_r($selectedIndividu);
+                echo '<br>';
                 $ret[] = $selectedIndividu;
             }
             return $ret;
@@ -367,7 +368,7 @@ echo '<p></p>';
 $mutation = new Mutation($population);
 if ($mutation->mutation()){
     $mutationOffsprings = $mutation->mutation();
-    echo 'Mutation offspring<br>';
+    echo '<br>Mutation offspring<br>';
     print_r($mutationOffsprings);
     echo '<p></p>';
     foreach($mutationOffsprings as $mutationOffspring){
